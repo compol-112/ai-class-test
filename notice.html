@@ -1,3 +1,48 @@
+<!-- 통일된 디자인 템플릿을 사용하는 세부 페이지들 -->
+
+<!-- 공통 스타일 정의 -->
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://i.imgur.com/kN7pMJP.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #222;
+  }
+  .container {
+    background-color: rgba(255,255,255,0.9);
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  h1 {
+    color: #002f6c;
+    border-bottom: 2px solid #002f6c;
+    padding-bottom: 10px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+  a {
+    color: #c82020;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <!-- notice.html -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -6,13 +51,15 @@
   <title>공지사항 | 석원님의 오늘 하루</title>
 </head>
 <body>
-  <h1>📢 공지사항</h1>
-  <ul>
-    <li>[6/21] 오동동번화가 순찰 강화 예정</li>
-    <li>[6/22] 오동동 로터리 보행자 캠페인</li>
-    <li>[6/30] 장비 점검 주간 안내</li>
-  </ul>
-  <a href="index.html">← 메인으로 돌아가기</a>
+  <div class="container">
+    <h1>📢 공지사항</h1>
+    <ul>
+      <li>[6/21] 오동동번화가 순찰 강화 예정</li>
+      <li>[6/22] 오동동 로터리 보행자 캠페인</li>
+      <li>[6/30] 장비 점검 주간 안내</li>
+    </ul>
+    <a href="index.html">← 메인으로 돌아가기</a>
+  </div>
 </body>
 </html>
 
@@ -24,13 +71,15 @@
   <title>순찰사진 | 석원님의 오늘 하루</title>
 </head>
 <body>
-  <h1>📸 순찰사진</h1>
-  <ul>
-    <li>6/19 – 오동동 광장 주변 순찰</li>
-    <li>6/17 – 삼정로 골목 도보 순찰</li>
-    <li>6/15 – 공영주차장 자전거 순찰</li>
-  </ul>
-  <a href="index.html">← 메인으로 돌아가기</a>
+  <div class="container">
+    <h1>📸 순찰사진</h1>
+    <ul>
+      <li>6/19 – 오동동 광장 주변 순찰</li>
+      <li>6/17 – 삼정로 골목 도보 순찰</li>
+      <li>6/15 – 공영주차장 자전거 순찰</li>
+    </ul>
+    <a href="index.html">← 메인으로 돌아가기</a>
+  </div>
 </body>
 </html>
 
@@ -42,13 +91,15 @@
   <title>힐링 여행지 | 석원님의 오늘 하루</title>
 </head>
 <body>
-  <h1>🌿 힐링 여행지</h1>
-  <ul>
-    <li>통영 동피랑 – 벽화 골목 산책</li>
-    <li>합천 테마파크 – 복고풍 여행</li>
-    <li>하동 십리벚꽃길 – 계절별 산책로</li>
-  </ul>
-  <a href="index.html">← 메인으로 돌아가기</a>
+  <div class="container">
+    <h1>🌿 힐링 여행지</h1>
+    <ul>
+      <li>통영 동피랑 – 벽화 골목 산책</li>
+      <li>합천 테마파크 – 복고풍 여행</li>
+      <li>하동 십리벚꽃길 – 계절별 산책로</li>
+    </ul>
+    <a href="index.html">← 메인으로 돌아가기</a>
+  </div>
 </body>
 </html>
 
@@ -60,12 +111,14 @@
   <title>전국 맛집 | 석원님의 오늘 하루</title>
 </head>
 <body>
-  <h1>🍴 전국 맛집</h1>
-  <ul>
-    <li>부산 춘하추동 – 시원한 밀면</li>
-    <li>대구 해장국집 – 얼큰한 뼈해장</li>
-    <li>전주 비빔밥 골목 – 정통 향토 음식</li>
-  </ul>
-  <a href="index.html">← 메인으로 돌아가기</a>
+  <div class="container">
+    <h1>🍴 전국 맛집</h1>
+    <ul>
+      <li>부산 춘하추동 – 시원한 밀면</li>
+      <li>대구 해장국집 – 얼큰한 뼈해장</li>
+      <li>전주 비빔밥 골목 – 정통 향토 음식</li>
+    </ul>
+    <a href="index.html">← 메인으로 돌아가기</a>
+  </div>
 </body>
 </html>

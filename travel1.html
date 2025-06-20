@@ -3,34 +3,31 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>🌿 힐링여행지 - 석원님의 정보센터</title>
+  <title>🌿 힐링 여행지 - 석원님의 정보센터</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
       margin: 0;
-      padding: 0;
+      background: #f4f4f4;
     }
     header {
       background-color: #003366;
       color: white;
-      padding: 20px;
+      padding: 30px;
       text-align: center;
     }
     nav {
       background: #0055aa;
-      padding: 10px;
       display: flex;
       justify-content: center;
+      padding: 12px;
       gap: 20px;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
     }
     .container {
       max-width: 800px;
@@ -40,15 +37,28 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .card {
+    .place {
       border-bottom: 1px solid #ddd;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+      padding: 20px 0;
+    }
+    .place:last-child {
+      border-bottom: none;
+    }
+    .place a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    .place a:hover {
+      color: #0055aa;
     }
     footer {
+      text-align: center;
       background: #003366;
       color: white;
-      text-align: center;
       padding: 20px;
       margin-top: 40px;
     }
@@ -56,8 +66,8 @@
 </head>
 <body>
   <header>
-    <h1>석원님의 정보센터</h1>
-    <p>지친 마음을 달래는 힐링 여행지 추천</p>
+    <h1>🌿 힐링 여행지</h1>
+    <p>쉼과 여유가 있는 여행지를 소개합니다</p>
   </header>
   <nav>
     <a href="index.html">🏠 메인</a>
@@ -66,19 +76,24 @@
     <a href="travel1.html">🌿 힐링여행지</a>
     <a href="food1.html">🍴 전국맛집</a>
     <a href="gallery.html">🖼 갤러리</a>
+    <a href="schedule.html">📅 일정관리</a>
+    <a href="resources.html">📂 자료실</a>
+    <a href="about.html">🧑 소개</a>
+    <a href="contact.html">📬 연락처</a>
+    <a href="ideas.html">💡 아이디어 공유</a>
   </nav>
 
   <div class="container">
-    <div class="card">
-      <h2>🌄 통영 동피랑 마을</h2>
+    <div class="place">
+      <a href="https://www.tongyeong.go.kr/02352/02419/03293.web" target="_blank">⛰ 통영 동피랑 마을</a>
       <p>벽화 골목과 바다 야경이 아름다운 남해안의 작은 마을</p>
     </div>
-    <div class="card">
-      <h2>⛰️ 지리산 둘레길</h2>
+    <div class="place">
+      <a href="https://www.jirisantour.kr/" target="_blank">⛰ 지리산 둘레길</a>
       <p>자연 속에서 명상과 트레킹이 가능한 최고의 힐링 명소</p>
     </div>
-    <div class="card">
-      <h2>🏖️ 경주 감포 해변</h2>
+    <div class="place">
+      <a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2521&" target="_blank">🏖 경주 감포 해변</a>
       <p>고요한 바닷가에서의 산책과 해돋이가 유명한 동해안의 보석</p>
     </div>
   </div>

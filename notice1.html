@@ -1,0 +1,95 @@
+<!-- notice1.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>📢 공지사항 - 석원님의 정보센터</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0055aa;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>석원님의 정보센터</h1>
+    <p>커뮤니티형 게시판 구조 시작</p>
+  </header>
+  <nav>
+    <a href="index.html">🏠 메인</a>
+    <a href="notice1.html">📢 공지사항</a>
+    <a href="patrol1.html">🚓 순찰일지</a>
+    <a href="travel1.html">🌿 힐링여행지</a>
+    <a href="food1.html">🍴 전국맛집</a>
+    <a href="gallery.html">🖼 갤러리</a>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2>📢 [공지] 야간 순찰 강화 안내</h2>
+      <p>6월 21일부터 오동동 일대 야간 순찰이 강화됩니다.<br>
+         중앙시장과 상가 밀집지역에 대해 오후 10시부터 집중 순찰을 시행합니다.</p>
+    </div>
+
+    <div class="card">
+      <h2>🎨 석원님의 Sora 작품</h2>
+      <img src="https://sora.chatgpt.com/api/assets/gen_01jy4a4k7afqstrbx4cxaph487" alt="석원님 작품" width="500">
+    </div>
+
+    <div class="card">
+      <h2>💬 의견 남기기</h2>
+      <textarea rows="5" cols="60" placeholder="여기에 의견을 입력하세요..."></textarea>
+      <br><button>등록</button>
+      <p>👁️ 방문자 수: <span id="visitor-count">123</span></p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
+  </footer>
+</body>
+</html>

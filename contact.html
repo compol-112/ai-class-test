@@ -1,0 +1,112 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>📬 연락처 - 석원님의 정보센터</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0055aa;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #0055aa;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>석원님의 정보센터</h1>
+    <p>📬 의견 및 문의하기</p>
+  </header>
+  <nav>
+    <a href="index.html">🏠 메인</a>
+    <a href="notice1.html">📢 공지사항</a>
+    <a href="patrol1.html">🚓 순찰일지</a>
+    <a href="travel1.html">🌿 힐링여행지</a>
+    <a href="food1.html">🍴 전국맛집</a>
+    <a href="gallery.html">🖼 갤러리</a>
+    <a href="schedule.html">📅 일정관리</a>
+    <a href="resources.html">📂 자료실</a>
+    <a href="about.html">🧑 소개</a>
+    <a href="contact.html">📬 연락처</a>
+    <a href="ideas.html">💡 아이디어 공유</a>
+  </nav>
+
+  <div class="container">
+    <h2>📨 문의 양식</h2>
+    <form onsubmit="alert('문의가 전송되었습니다. (실제 전송 기능 없음)'); return false;">
+      <label for="name">이름</label>
+      <input type="text" id="name" required>
+
+      <label for="email">이메일</label>
+      <input type="email" id="email" required>
+
+      <label for="message">메시지</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">전송</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
+  </footer>
+</body>
+</html>

@@ -70,6 +70,29 @@
     <h1>석원님의 오늘 하루</h1>
     <p>야간 근무 중에도, 시민과 함께하는 안전한 우리 동네</p>
   </header>
+<!-- ✅ 오른쪽 정렬된 날짜/시간 영역 -->
+<div id="datetime-display" style="text-align:right; background:#cfe2ff; padding:12px 20px; font-size:20px; font-weight:900;">
+  ⏰ <span id="current-datetime">로딩 중...</span>
+</div>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const days = ['일', '월', '화', '수', '목', '금', '토'];
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mi = String(now.getMinutes()).padStart(2, '0');
+    const ss = String(now.getSeconds()).padStart(2, '0');
+    const day = days[now.getDay()];
+    document.getElementById("current-datetime").textContent =
+      `${yyyy}-${mm}-${dd} (${day}) ${hh}:${mi}:${ss}`;
+  }
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+</script>
+
   <nav>
     <a href="notice1.html">📢 공지사항</a>
     <a href="patrol1.html">🚓 순찰일지</a>

@@ -65,7 +65,59 @@
     }
   </style>
 </head>
-<body>
+<!-- 🔽 댓글 입력/출력 영역 -->
+<section class="section">
+  <h2>💬 의견 남기기</h2>
+  <div>
+    <textarea id="commentInput" rows="4" style="width:100%; font-size:16px;" placeholder="의견을 남겨주세요."></textarea><br>
+    <button onclick="submitComment()" style="margin-top:5px;">등록</button>
+  </div>
+  <ul id="commentList" style="list-style:none; padding:0; margin-top:20px;"></ul>
+</section>
+
+<!-- 🔧 Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // 🔐 Firebase 설정
+  const firebaseConfig = {
+    apiKey: "AIzaSyA8921paYwkHZw2fEYhnJQzJiSpV3t1kwQ",
+    authDomain: "my-homepage-dbfbf.firebaseapp.com",
+    databaseURL: "https://my-homepage-dbfbf-default-rtdb.firebaseio.com",
+    projectId: "my-homepage-dbfbf",
+    storageBucket: "my-homepage-dbfbf.appspot.com",
+    messagingSenderId: "578440333854",
+    appId: "1:578440333854:web:059016c663649ed8a3efc0f",
+    measurementId: "G-N9NQWZP6GS"
+  };
+
+  // 🚀 초기화
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // ✏ 댓글 등록 함수
+  function submitComment() {
+    const text = document.getElementById("commentInput").value.trim();
+    if (text === "") return alert("내용을 입력해주세요.");
+    db.ref("comments").push({ text, time: new Date().toISOString() });
+    document.getElementById("commentInput").value = "";
+  }
+
+  // 🔄 댓글 실시간 출력
+  db.ref("comments").on("value", snapshot => {
+    const list = document.getElementById("commentList");
+    list.innerHTML = "";
+    snapshot.forEach(child => {
+      const li = document.createElement("li");
+      li.textContent = "🗨 " + child.val().text;
+      li.style.padding = "8px 0";
+      list.appendChild(li);
+    });
+  });
+</script>
+
+  <body>
   <header>
     <h1>석원님의 오늘 하루</h1>
     <p>야간 근무 중에도, 시민과 함께하는 안전한 우리 동네</p>

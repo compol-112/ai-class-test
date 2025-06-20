@@ -68,6 +68,12 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    .visitor-counter {
+      margin-top: 30px;
+      font-weight: bold;
+      text-align: right;
+      color: #666;
+    }
     footer {
       background: #003366;
       color: white;
@@ -111,10 +117,27 @@
       <br>
       <button onclick="alert('댓글이 등록되었습니다 (실제 저장은 작동하지 않음)')">등록</button>
     </div>
+
+    <div class="visitor-counter">
+      👁️ 방문자 수: <span id="visitor-count">0</span>
+    </div>
   </div>
 
   <footer>
     &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
   </footer>
+
+  <script>
+    // 로컬 스토리지를 이용한 임시 방문자 수 증가
+    const countKey = 'visitor_gallery_count';
+    let count = localStorage.getItem(countKey);
+    if (!count) {
+      count = 1;
+    } else {
+      count = parseInt(count) + 1;
+    }
+    localStorage.setItem(countKey, count);
+    document.getElementById('visitor-count').innerText = count;
+  </script>
 </body>
 </html>

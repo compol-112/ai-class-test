@@ -1,16 +1,11 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>석원님의 정보센터</title>
+  <title>석원님의 오늘 하루</title>
   <style>
-    :root {
-      --main-color: #002f6c;
-      --accent-color: #c82020;
-      --bg-overlay: rgba(255,255,255,0.85);
-    }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -18,50 +13,43 @@
       background-size: cover;
       color: #222;
     }
-
     header {
-      background-color: var(--main-color);
+      background-color: #003366;
       color: white;
-      padding: 20px;
+      padding: 30px;
       text-align: center;
     }
-
     nav {
       display: flex;
       justify-content: center;
-      background-color: #013267;
+      flex-wrap: wrap;
+      background-color: #0055aa;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      padding: 15px 25px;
+      padding: 15px 20px;
       display: inline-block;
+      font-weight: bold;
     }
-
     nav a:hover {
-      background-color: #001c3a;
+      background-color: #003f7f;
     }
-
     .container {
-      background-color: var(--bg-overlay);
       max-width: 1000px;
-      margin: 30px auto;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-
-    .section {
+    section {
       margin-bottom: 40px;
     }
-
-    .section h2 {
-      border-bottom: 2px solid var(--main-color);
+    h2 {
+      border-bottom: 2px solid #003366;
       padding-bottom: 10px;
-      margin-bottom: 20px;
     }
-
     .card {
       background: white;
       border-radius: 10px;
@@ -69,74 +57,72 @@
       margin-bottom: 20px;
       box-shadow: 0 0 6px rgba(0,0,0,0.1);
     }
-
-    .card img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #013267;
+      background-color: #003366;
       color: white;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>석원님의 정보센터</h1>
+    <h1>석원님의 오늘 하루</h1>
     <p>야간 근무 중에도, 시민과 함께하는 안전한 우리 동네</p>
   </header>
-
   <nav>
-    <a href="#notice">📢 공지사항</a>
-    <a href="#patrol">📸 순찰사진</a>
-    <a href="#travel">🌿 힐링여행지</a>
-    <a href="#food">🍴 전국맛집</a>
+    <a href="notice1.html">📢 공지사항</a>
+    <a href="patrol1.html">🚓 순찰일지</a>
+    <a href="travel1.html">🌿 힐링여행지</a>
+    <a href="food1.html">🍴 전국맛집</a>
+    <a href="gallery.html">🖼 갤러리</a>
+    <a href="schedule.html">📅 일정관리</a>
+    <a href="resources.html">📂 자료실</a>
+    <a href="about.html">🧑 소개</a>
+    <a href="contact.html">📬 연락처</a>
+    <a href="ideas.html">💡 아이디어 공유</a>
   </nav>
 
   <div class="container">
-    <section id="notice" class="section">
+    <section>
       <h2>📢 공지사항</h2>
       <div class="card">
         <strong>[중요] 6월 21일 야간 순찰 강화 안내</strong>
         <p>중앙시장 인근 야간 순찰이 22시부터 집중됩니다.</p>
       </div>
       <div class="card">
-        <strong>순찰 장비 점검 주간 안내</strong>
-        <p>6월 마지막 주 장비 점검 및 무전기 배터리 상태 확인 바랍니다.</p>
+        <strong>장비 점검 주간 안내</strong>
+        <p>6월 마지막 주 장비 점검 및 무전기 배터리 확인 바랍니다.</p>
       </div>
     </section>
-
-    <section id="patrol" class="section">
+    <section>
       <h2>📸 순찰사진</h2>
       <div class="card">
-        <img src="https://via.placeholder.com/800x400?text=%EC%88%9C%EC%B0%B0%EC%A4%91" alt="순찰사진">
-        <p>6월 15일 야간 순찰 중 – 중앙시장 후문 일대</p>
+        <p>6/19 – 오동동 광장 주변 순찰</p>
+        <p>6/17 – 상남초등학교 도보 순찰</p>
+        <p>6/15 – 공영주차장 자전거 순찰</p>
       </div>
     </section>
-
-    <section id="travel" class="section">
+    <section>
       <h2>🌿 힐링 여행지</h2>
       <div class="card">
-        <img src="https://via.placeholder.com/800x400?text=%ED%95%9C%EA%B5%AD+%EB%A7%9B%EC%A7%91" alt="여행지">
-        <p><strong>통영 동피랑 마을</strong> – 야경과 벽화 골목에서 힐링!</p>
+        <p>통영 동피랑 마을 – 야경과 벽화 골목에서 힐링!</p>
+        <p>지리산 둘레길 – 자연과 함께 걷는 힐링 코스</p>
+        <p>감포 해변 – 파도 소리에 잠시 멈춤</p>
       </div>
     </section>
-
-    <section id="food" class="section">
+    <section>
       <h2>🍴 전국 맛집</h2>
       <div class="card">
-        <img src="https://via.placeholder.com/800x400?text=%EB%A7%9B%EC%A7%91+%EC%9D%8C%EC%8B%9D" alt="맛집">
-        <p><strong>부산 밀면집 – 춘하추동</strong><br>여름에 시원한 밀면 한 그릇 강추!</p>
+        <p>부산 밀면집 – 여름엔 역시 시원한 밀면</p>
+        <p>광주 떡갈비골목 – 전통 있는 맛집</p>
+        <p>전주 남부시장 야시장 – 야식 천국</p>
       </div>
     </section>
   </div>
 
   <footer>
-    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작 지원: ChatGPT
+    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
   </footer>
 </body>
 </html>

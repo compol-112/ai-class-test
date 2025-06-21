@@ -22,51 +22,7 @@
   <p><em>천천히, 하지만 즐겁게. 새로운 도전, 함께 걸어가요 😊</em></p>
 
   <h3>📌 보유 자격증</h3>
-  <table border="1" cellpadding="8" cellspacing="0">
-    <tr><th>자격증명</th></tr>
-    <tr><td>정보처리기사</td></tr>
-    <tr><td>인터넷정보검색사 2급</td></tr>
-    <tr><td>워드프로세서 1급</td></tr>
-    <tr><td>방송사 관련 자격</td></tr>
-    <tr><td>학교폭력상담사 3급</td></tr>
-    <tr><td>리눅스마스터 2급</td></tr>
-    <tr><td>네트워크관리사 2급</td></tr>
-    <tr><td>영상정보관리사</td></tr>
-    <tr><td>ADSP (데이터분석 준전문가)</td></tr>
-    <tr><td>바리스타 2급</td></tr>
-  </table>
-
-  <h3>🎓 수료한 교육 과정</h3>
-  <table border="1" cellpadding="8" cellspacing="0">
-    <tr><th>교육 과정명</th></tr>
-    <tr><td>AI · ChatGPT 활용 과정</td></tr>
-    <tr><td>5060+ 인생설계 과정</td></tr>
-    <tr><td>창원대학교 시민 대상 ChatGPT 활용 강의 수료</td></tr>
-    <tr><td>빅데이터 분석기사 필기 합격 (실기 준비 경험 포함)</td></tr>
-  </table>
-</section>
-<style>
-  .info-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 12px;
-  }
-
-  .info-table th {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 12px;
-    text-align: left;
-    border-radius: 8px 8px 0 0;
-  }
-
-  .info-table td {
-    background-color: #ecf0f1;
-    padding: 12px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-
+ <style>
   .info-section {
     margin-top: 3rem;
   }
@@ -75,7 +31,56 @@
     margin-bottom: 1rem;
     color: #34495e;
   }
+
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .card-list li {
+    background-color: #ecf0f1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: 500;
+    flex: 1 1 45%;
+  }
+
+  @media (max-width: 600px) {
+    .card-list li {
+      flex: 1 1 100%;
+    }
+  }
 </style>
+
+<div class="info-section">
+  <h3>📌 자격증 현황</h3>
+  <ul class="card-list">
+    <li>정보처리기사</li>
+    <li>인터넷정보검색사 2급</li>
+    <li>워드프로세서 1급</li>
+    <li>방송사 관련 자격</li>
+    <li>학교폭력상담사 3급</li>
+    <li>리눅스마스터 2급</li>
+    <li>네트워크관리사 2급</li>
+    <li>영상정보관리사</li>
+    <li>ADSP (데이터분석 준전문가)</li>
+    <li>바리스타 2급</li>
+  </ul>
+</div>
+
+<div class="info-section">
+  <h3>🎓 교육 수료 리스트</h3>
+  <ul class="card-list">
+    <li>AI · ChatGPT 활용 과정</li>
+    <li>5060+ 인생설계 과정</li>
+    <li>창원대학교 시민 대상 ChatGPT 활용 강의</li>
+    <li>빅데이터 분석기사 필기 합격 (실기 준비 경험 포함)</li>
+  </ul>
+</div>
 
 <div class="info-section">
   <h3>📌 보유 자격증</h3>

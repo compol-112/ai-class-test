@@ -1,214 +1,130 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>석원님의 오늘 하루</title>
+  <title>AI 블로그 테스트</title>
   <style>
     body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://i.imgur.com/kN7pMJP.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #222;
+      padding: 0;
+      background: #f9f9f9;
     }
     header {
-      background-color: #003366;
-      color: white;
-      padding: 30px;
+      background: #333;
+      color: #fff;
+      padding: 1rem;
       text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #0055aa;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 15px 20px;
-      display: inline-block;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background-color: #003f7f;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
     section {
-      margin-bottom: 40px;
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     h2 {
-      border-bottom: 2px solid #003366;
-      padding-bottom: 10px;
+      color: #333;
     }
-    .card {
-      background: white;
+    p {
+      line-height: 1.8;
+    }
+    em {
+      color: #666;
+    }
+    .info-section {
+      margin-top: 3rem;
+    }
+    .info-section h3 {
+      margin-bottom: 1rem;
+      color: #34495e;
+    }
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+    .card-list li {
+      background-color: #ecf0f1;
+      padding: 12px 16px;
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 500;
+      flex: 1 1 45%;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #003366;
-      color: white;
+    @media (max-width: 600px) {
+      .card-list li {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
-<!-- 🔽 댓글 입력/출력 영역 -->
-<section class="section">
-  <h2>💬 의견 남기기</h2>
-  <div>
-    <textarea id="commentInput" rows="4" style="width:100%; font-size:16px;" placeholder="의견을 남겨주세요."></textarea><br>
-    <button onclick="submitComment()" style="margin-top:5px;">등록</button>
-  </div>
-  <ul id="commentList" style="list-style:none; padding:0; margin-top:20px;"></ul>
-</section>
-
-<!-- 🔧 Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-
-<script>
-  // 🔐 Firebase 설정
-  const firebaseConfig = {
-    apiKey: "AIzaSyA8921paYwkHZw2fEYhnJQzJiSpV3t1kwQ",
-    authDomain: "my-homepage-dbfbf.firebaseapp.com",
-    databaseURL: "https://my-homepage-dbfbf-default-rtdb.firebaseio.com",
-    projectId: "my-homepage-dbfbf",
-    storageBucket: "my-homepage-dbfbf.appspot.com",
-    messagingSenderId: "578440333854",
-    appId: "1:578440333854:web:059016c663649ed8a3efc0f",
-    measurementId: "G-N9NQWZP6GS"
-  };
-
-  // 🚀 초기화
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-
-  // ✏ 댓글 등록 함수
-  function submitComment() {
-    const text = document.getElementById("commentInput").value.trim();
-    if (text === "") return alert("내용을 입력해주세요.");
-    db.ref("comments").push({ text, time: new Date().toISOString() });
-    document.getElementById("commentInput").value = "";
-  }
-
-  // 🔄 댓글 실시간 출력
-  db.ref("comments").on("value", snapshot => {
-    const list = document.getElementById("commentList");
-    list.innerHTML = "";
-    snapshot.forEach(child => {
-      const li = document.createElement("li");
-      li.textContent = "🗨 " + child.val().text;
-      li.style.padding = "8px 0";
-      list.appendChild(li);
-    });
-  });
-</script>
-
-  <body>
+<body>
   <header>
-    <h1>석원님의 오늘 하루</h1>
-    <p>야간 근무 중에도, 시민과 함께하는 안전한 우리 동네</p>
+    <h1>환영합니다! 제 블로그에 오신 것을</h1>
   </header>
-<!-- ✅ 오른쪽 정렬된 날짜/시간 영역 -->
-<div id="datetime-display" style="
-  text-align: right;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 14px 24px;
-  font-size: 22px;
-  font-weight: 900;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-">
-  ⏰ <span id="current-datetime">로딩 중...</span>
-</div>
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    const days = ['일', '월', '화', '수', '목', '금', '토'];
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, '0');
-    const dd = String(now.getDate()).padStart(2, '0');
-    const hh = String(now.getHours()).padStart(2, '0');
-    const mi = String(now.getMinutes()).padStart(2, '0');
-    const ss = String(now.getSeconds()).padStart(2, '0');
-    const day = days[now.getDay()];
-    document.getElementById("current-datetime").textContent =
-      `${yyyy}-${mm}-${dd} (${day}) ${hh}:${mi}:${ss}`;
-  }
-  setInterval(updateDateTime, 1000);
-  updateDateTime();
-</script>
 
-  <nav>
-    <a href="notice1.html">📢 공지사항</a>
-    <a href="patrol1.html">🚓 순찰일지</a>
-    <a href="travel1.html">🌿 힐링여행지</a>
-    <a href="food1.html">🍴 전국맛집</a>
-    <a href="gallery.html">🖼 갤러리</a>
-    <a href="schedule.html">📅 일정관리</a>
-    <a href="resources.html">📂 자료실</a>
-    <a href="about.html">🧑 소개</a>
-    <a href="contact.html">📬 연락처</a>
-    <a href="ideas.html">💡 아이디어 공유</a>
-  </nav>
+  <section id="notice">
+    <h2>📢 공지사항</h2>
+    <ul>
+      <li>블로그 새단장 완료! AI와 데이터 분석 이야기로 채워갑니다 😊</li>
+      <li>ChatGPT 활용 강의 요약본 업로드 예정입니다.</li>
+      <li>질문은 댓글 또는 방명록에 남겨주세요!</li>
+    </ul>
+  </section>
 
-  <div class="container">
-    <section>
-      <h2>📢 공지사항</h2>
-      <div class="card">
-        <strong>[중요] 6월 21일 야간 순찰 강화 안내</strong>
-        <p>중앙시장 인근 야간 순찰이 22시부터 집중됩니다.</p>
-      </div>
-      <div class="card">
-        <strong>장비 점검 주간 안내</strong>
-        <p>6월 마지막 주 장비 점검 및 무전기 배터리 확인 바랍니다.</p>
-      </div>
-    </section>
-    <section>
-      <h2>📸 순찰사진</h2>
-      <div class="card">
-        <p>6/19 – 오동동 광장 주변 순찰</p>
-        <p>6/17 – 상남초등학교 도보 순찰</p>
-        <p>6/15 – 공영주차장 자전거 순찰</p>
-      </div>
-    </section>
-    <section>
-      <h2>🌿 힐링 여행지</h2>
-      <div class="card">
-        <p>통영 동피랑 마을 – 야경과 벽화 골목에서 힐링!</p>
-        <p>지리산 둘레길 – 자연과 함께 걷는 힐링 코스</p>
-        <p>감포 해변 – 파도 소리에 잠시 멈춤</p>
-      </div>
-    </section>
-    <section>
-      <h2>🍴 전국 맛집</h2>
-      <div class="card">
-        <p>부산 밀면집 – 여름엔 역시 시원한 밀면</p>
-        <p>광주 떡갈비골목 – 전통 있는 맛집</p>
-        <p>전주 남부시장 야시장 – 야식 천국</p>
-      </div>
-    </section>
-  </div>
-<div style="text-align:right; margin-top: 20px;">
-  👣 오늘의 방문자 수:  
-  <img src="https://www.cutercounter.com/hits.php?id=hrxpfof&nd=6&style=1" alt="visit counter">
-</div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>“퇴직 후 뭘 해볼까?”</p>
 
-  <footer>
-    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
-  </footer>
+    <p>
+      30년 가까이 경찰관으로 근무하며, 정보통신과 관련된 현장 기술 업무를 맡아왔습니다.
+      시대가 바뀌면서 저도 기술 변화에 발맞춰 끊임없이 배웠고,
+      <strong>정보처리기사, 리눅스마스터 2급, ADSP, 영상정보관리사</strong> 등 다양한 IT 자격증을 취득하며 실무 능력을 키워왔습니다.
+    </p>
+
+    <p>
+      퇴직이 다가오면서, '앞으로는 어떤 삶을 살고 싶을까?'를 고민했고,
+      <strong>AI, 데이터 분석, ChatGPT</strong> 같은 새로운 분야를 배우기 시작했습니다.
+      ‘5060+ 인생설계 과정’과 ‘시민 대상 ChatGPT 활용 강의’도 수료하며 평생학습자로서의 길을 걷고 있습니다.
+    </p>
+
+    <p>
+      이 블로그는 그런 제 인생 2막의 기록장이자, 배움과 경험을 나누는 따뜻한 공간이 되었으면 좋겠습니다.
+      커피를 좋아해 <strong>바리스타 2급</strong> 자격도 땄고, 사람과 기술을 잇는 이야기를 꾸준히 써보려 합니다.
+    </p>
+
+    <p><em>천천히, 하지만 즐겁게. 새로운 도전, 함께 걸어가요 😊</em></p>
+
+    <div class="info-section">
+      <h3>📌 자격증 현황</h3>
+      <ul class="card-list">
+        <li>정보처리기사</li>
+        <li>인터넷정보검색사 2급</li>
+        <li>워드프로세서 1급</li>
+        <li>방송사 관련 자격</li>
+        <li>학교폭력상담사 3급</li>
+        <li>리눅스마스터 2급</li>
+        <li>네트워크관리사 2급</li>
+        <li>영상정보관리사</li>
+        <li>ADSP (데이터분석 준전문가)</li>
+        <li>바리스타 2급</li>
+      </ul>
+    </div>
+
+    <div class="info-section">
+      <h3>🎓 교육 수료 리스트</h3>
+      <ul class="card-list">
+        <li>AI · ChatGPT 활용 과정</li>
+        <li>5060+ 인생설계 과정</li>
+        <li>창원대학교 시민 대상 ChatGPT 활용 강의</li>
+        <li>빅데이터 분석기사 필기 합격 (실기 준비 경험 포함)</li>
+      </ul>
+    </div>
+  </section>
 </body>
 </html>

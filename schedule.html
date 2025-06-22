@@ -1,120 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>일정 관리</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f5f8fa;
-            color: #333;
-            padding: 40px;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-        }
-        th, td {
-            padding: 16px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #007BFF;
-            color: white;
-        }
-        td:first-child {
-            font-weight: bold;
-            color: #2c3e50;
-            white-space: nowrap;
-        }
-        .emoji {
-            margin-right: 8px;
-        }
-        .date {
-            font-size: 12px;
-            color: #777;
-            display: block;
-        }
-        caption {
-            caption-side: top;
-            text-align: left;
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>일정관리</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #004890;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f3f3f3;
+    }
+    .icon {
+      margin-right: 5px;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
 </head>
-  <nav>
-    <a href="index.html">🏠 메인</a>
-    <a href="notice1.html">📢 공지사항</a>
-    <a href="travel1.html">🌿 힐링여행지</a>
-    <a href="food1.html">🍴 전국맛집</a>
-    <a href="gallery.html">🖼 갤러리</a>
-    <a href="schedule.html">📅 일정관리</a>
-    <a href="resources.html">📂 자료실</a>
-    <a href="about.html">🧑 소개</a>
-    <a href="contact.html">📬 연락처</a>
-    <a href="ideas.html">💡 아이디어 공유</a>
-  </nav>
 <body>
-    <h1>📅 일정 관리</h1>
+  <div class="navbar">
+    <a href="index.html">📢 공지사항</a>
+    <a href="#">🌿 힐링여행지</a>
+    <a href="#">🍴 전국맛집</a>
+    <a href="#">🐝 갤러리</a>
+    <a href="schedule.html">🗓️ 일정관리</a>
+    <a href="#">📂 자료실</a>
+    <a href="#">🧑 소개</a>
+    <a href="#">📞 연락처</a>
+    <a href="#">💡 아이디어 공유</a>
+  </div>
 
+  <div class="container">
+    <h2>✅ 블로그 일정관리 추천 콘텐츠</h2>
     <table>
-        <caption>✅ 블로그 일정관리 추천 콘텐츠</caption>
-        <thead>
-            <tr>
-                <th>구분</th>
-                <th>내용 예시</th>
-                <th>설명</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="emoji">📚</span> 학습 일정 <span class="date">2025-06-22</span></td>
-                <td><code>AI·코딩 학습 계획</code>, <code>ChatGPT 실습</code>, 데이터 분석 실습</td>
-                <td>배운 내용을 정리하거나 복습할 수 있도록 계획</td>
-            </tr>
-            <tr>
-                <td><span class="emoji">🗓️</span> 강의 일정 <span class="date">2025-06-24</span></td>
-                <td>평생교육원 수강 일정, 지역 강의 출장 일정</td>
-                <td>자신이 듣는 교육 일정이나 강사로 참여하는 일정 정리</td>
-            </tr>
-            <tr>
-                <td><span class="emoji">💼</span> 진로 설계 <span class="date">2025-07-01</span></td>
-                <td>자격증 취득 일정, 면접 준비, 포트폴리오 제작</td>
-                <td>재취업·제2의 인생 준비를 위한 목표 관리</td>
-            </tr>
-            <tr>
-                <td><span class="emoji">☕</span> 커뮤니티 활동 <span class="date">2025-06-28</span></td>
-                <td>동문 모임, 디지털 배움터, 바리스타 모임</td>
-                <td>지인 네트워킹이나 교류 일정 공유</td>
-            </tr>
-            <tr>
-                <td><span class="emoji">💻</span> 블로그 관리 <span class="date">2025-06-30</span></td>
-                <td>콘텐츠 발행 일정, 게시판 관리, 댓글 답변일</td>
-                <td>꾸준한 운영을 위한 일정 기록</td>
-            </tr>
-            <tr>
-                <td><span class="emoji">🧘</span> 개인 관리 <span class="date">2025-06-23</span></td>
-                <td>건강검진, 운동 루틴, 명상/휴식 시간</td>
-                <td>자기 관리를 위한 정기 일과 포함</td>
-            </tr>
-            <tr>
-                <td><span class="emoji">🌏</span> 여행 및 체험 <span class="date">2025-07-15</span></td>
-                <td>주말 가족 여행, 문화체험, 봉사활동 참여</td>
-                <td>삶의 질을 높이는 활동 일정도 좋아요</td>
-            </tr>
-        </tbody>
+      <tr>
+        <th>날짜</th>
+        <th>구분</th>
+        <th>내용 예시</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td>6/22</td>
+        <td>📚 학습 일정</td>
+        <td>AI·코딩 학습 계획, ChatGPT 실습, 데이터 분석 실습</td>
+        <td>배운 내용을 정리하거나 복습할 수 있도록 계획</td>
+      </tr>
+      <tr>
+        <td>6/23</td>
+        <td>📅 강의 일정</td>
+        <td>평생교육원 수강 일정, 지역 강의 출장 일정</td>
+        <td>자신이 듣는 교육 일정이나 강사로 참여하는 일정 정리</td>
+      </tr>
+      <tr>
+        <td>6/24</td>
+        <td>💼 진로 설계</td>
+        <td>자격증 취득 일정, 면접 준비, 포트폴리오 제작</td>
+        <td>재취업·제2의 인생 준비를 위한 목표 관리</td>
+      </tr>
+      <tr>
+        <td>6/25</td>
+        <td>☕ 커뮤니티 활동</td>
+        <td>동문 모임, 디지털 배움터, 바리스타 모임</td>
+        <td>지인 네트워킹이나 교류 일정 공유</td>
+      </tr>
+      <tr>
+        <td>6/26</td>
+        <td>💻 블로그 관리</td>
+        <td>콘텐츠 발행 일정, 게시판 관리, 댓글 답변일</td>
+        <td>꾸준한 운영을 위한 일정 기록</td>
+      </tr>
+      <tr>
+        <td>6/27</td>
+        <td>🧘 개인 관리</td>
+        <td>건강검진, 운동 루틴, 명상/휴식 시간</td>
+        <td>자기 관리를 위한 정기 일과 포함</td>
+      </tr>
+      <tr>
+        <td>6/28</td>
+        <td>✈️ 여행 및 체험</td>
+        <td>주말 가족 여행, 문화체험, 봉사활동 참여</td>
+        <td>삶의 질을 높이는 활동 일정도 좋아요</td>
+      </tr>
     </table>
+  </div>
 </body>
-
 </html>

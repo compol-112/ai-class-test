@@ -2,42 +2,83 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>일정 관리</title>
+  <title>🖼 일정관리</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0055aa;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
       padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #222;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
-    table {
+    .gallery img {
+      width: 260px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .comment-section {
+      margin-top: 40px;
+    }
+    textarea {
       width: 100%;
-      border-collapse: collapse;
-      background-color: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px 14px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
-    td:first-child::before {
-      content: attr(data-date) " ";
-      font-weight: bold;
-      margin-right: 8px;
-    }
-    caption {
-      text-align: left;
-      font-size: 20px;
+      height: 100px;
       margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0055aa;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .visitor-counter {
+      margin-top: 30px;
       font-weight: bold;
+      text-align: right;
+      color: #666;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>

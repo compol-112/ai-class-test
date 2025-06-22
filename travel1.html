@@ -1,104 +1,504 @@
-<!-- travel1.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>🌿 힐링 여행지 - 석원님의 정보센터</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌿 힐링여행지 - 석원님의 정보센터</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
-      background: #f4f4f4;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     header {
-      background-color: #003366;
-      color: white;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      margin: 20px auto;
+      max-width: 1200px;
       padding: 30px;
       text-align: center;
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
     nav {
-      background: #0055aa;
       display: flex;
       justify-content: center;
-      padding: 12px;
-      gap: 20px;
+      gap: 10px;
       flex-wrap: wrap;
     }
+
     nav a {
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
     }
-    .container {
-      max-width: 800px;
+
+    nav a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    }
+
+    .main-content {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
       margin: 30px auto;
-      background: white;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      max-width: 1200px;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .featured-section {
+      background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+      color: white;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
     }
-    .place {
-      border-bottom: 1px solid #ddd;
-      padding: 20px 0;
+
+    .featured-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
-    .place:last-child {
+
+    .featured-section ul {
+      list-style: none;
+    }
+
+    .featured-section li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .featured-section li:last-child {
       border-bottom: none;
     }
-    .place a {
+
+    .featured-section a {
+      color: white;
       text-decoration: none;
-      color: black;
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      font-size: 18px;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
-    .place a:hover {
-      color: #0055aa;
+
+    .featured-section a:hover {
+      transform: translateX(10px);
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
     }
-    footer {
-      text-align: center;
-      background: #003366;
+
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .travel-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #f0f0f0;
+    }
+
+    .travel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .travel-card-header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
       padding: 20px;
+      position: relative;
+    }
+
+    .travel-number {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .travel-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .travel-location {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .travel-card-body {
+      padding: 25px;
+    }
+
+    .travel-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .travel-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .feature-tag {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .travel-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .rating {
+      color: #ffd700;
+      font-size: 1.1rem;
+    }
+
+    .visit-count {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .season-badge {
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+
+    .pagination {
+      text-align: center;
       margin-top: 40px;
+    }
+
+    .pagination span {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      margin: 30px auto 20px;
+      max-width: 1200px;
+      padding: 30px;
+      text-align: center;
+      color: #666;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content {
+        padding: 25px;
+      }
+      
+      .travel-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      nav {
+        gap: 8px;
+      }
+      
+      nav a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🌿 힐링 여행지</h1>
-    <p>쉼과 여유가 있는 여행지를 소개합니다</p>
-  </header>
-  <nav>
-    <a href="index.html">🏠 메인</a>
-    <a href="notice1.html">📢 공지사항</a>
-    <a href="travel1.html">🌿 힐링여행지</a>
-    <a href="food1.html">🍴 전국맛집</a>
-    <a href="gallery.html">🖼 갤러리</a>
-    <a href="schedule.html">📅 일정관리</a>
-    <a href="resources.html">📂 자료실</a>
-    <a href="about.html">🧑 소개</a>
-    <a href="contact.html">📬 연락처</a>
-    <a href="ideas.html">💡 아이디어 공유</a>
-  </nav>
-
   <div class="container">
-    <div class="place">
-      <a href="https://www.tongyeong.go.kr/02352/02419/03293.web" target="_blank">⛰ 통영 동피랑 마을</a>
-      <p>벽화 골목과 바다 야경이 아름다운 남해안의 작은 마을</p>
-    </div>
-    <div class="place">
-      <a href="https://www.jirisantour.kr/" target="_blank">⛰ 지리산 둘레길</a>
-      <p>자연 속에서 명상과 트레킹이 가능한 최고의 힐링 명소</p>
-    </div>
-    <div class="place">
-      <a href="https://www.gyeongju.go.kr/tour/page.do?mnu_uid=2521&" target="_blank">🏖 경주 감포 해변</a>
-      <p>고요한 바닷가에서의 산책과 해돋이가 유명한 동해안의 보석</p>
-    </div>
-  </div>
+    <header>
+      <h1>석원님의 정보센터</h1>
+      <p>일정 관리 🍽️ 석원님이 AI 탐방기</p>
+      <nav>
+        <a href="index.html">🏠 메인</a>
+        <a href="notice1.html">📢 공지사항</a>
+        <a href="travel1.html">🌿 힐링여행지</a>
+        <a href="food1.html">🍴 전국맛집</a>
+        <a href="gallery.html">🖼 갤러리</a>
+        <a href="schedule.html">📅 일정관리</a>
+        <a href="resources.html">📂 자료실</a>
+        <a href="about.html">🧑 소개</a>
+        <a href="contact.html">📬 연락처</a>
+        <a href="ideas.html">💡 아이디어 공유</a>
+      </nav>
+    </header>
 
-  <footer>
-    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
-  </footer>
+    <main class="main-content">
+      <h2 class="page-title">🌿 힐링여행지 안내</h2>
+      
+      <div class="featured-section">
+        <h3>🌟 이달의 추천 여행지</h3>
+        <ul>
+          <li>🌸 <a href="#">제주도 - 유채꽃과 벚꽃이 만나는 봄의 전령</a></li>
+          <li>🏔️ <a href="#">강원도 정선 - 한적한 산골마을의 여유</a></li>
+          <li>🏖️ <a href="#">부산 태종대 - 푸른 바다와 절벽의 절경</a></li>
+        </ul>
+      </div>
+      
+      <div class="travel-grid">
+        <div class="travel-card">
+          <div class="travel-card-header">
+            <div class="travel-number">1</div>
+            <div class="travel-name">제주도 한라산</div>
+            <div class="travel-location">📍 제주특별자치도</div>
+          </div>
+          <div class="travel-card-body">
+            <div class="travel-description">
+              한국 최고봉의 웅장함과 사계절 다른 아름다움을 선사하는 제주도의 상징. 
+              등산로마다 펼쳐지는 다양한 식생과 백록담의 신비로운 풍경이 일품입니다.
+            </div>
+            <div class="travel-features">
+              <span class="feature-tag">등산</span>
+              <span class="feature-tag">자연경관</span>
+              <span class="feature-tag">사진촬영</span>
+            </div>
+            <div class="travel-stats">
+              <div>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+                <span class="season-badge">사계절</span>
+              </div>
+              <div class="visit-count">방문 247</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-card-header">
+            <div class="travel-number">2</div>
+            <div class="travel-name">경주 불국사</div>
+            <div class="travel-location">📍 경상북도 경주</div>
+          </div>
+          <div class="travel-card-body">
+            <div class="travel-description">
+              천년 고도 경주의 대표적인 문화유산. 신라 문화의 정수를 담은 아름다운 
+              사찰과 석가탑, 다보탑의 조화가 마음의 평안을 선사합니다.
+            </div>
+            <div class="travel-features">
+              <span class="feature-tag">역사문화</span>
+              <span class="feature-tag">사찰</span>
+              <span class="feature-tag">힐링</span>
+            </div>
+            <div class="travel-stats">
+              <div>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+                <span class="season-badge">봄·가을</span>
+              </div>
+              <div class="visit-count">방문 198</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-card-header">
+            <div class="travel-number">3</div>
+            <div class="travel-name">강원도 정선 아리랑마을</div>
+            <div class="travel-location">📍 강원도 정선</div>
+          </div>
+          <div class="travel-card-body">
+            <div class="travel-description">
+              정선아리랑의 고향에서 만나는 한국의 정서. 산골마을의 순박함과
+              전통문화가 어우러진 진정한 힐링 공간입니다.
+            </div>
+            <div class="travel-features">
+              <span class="feature-tag">전통문화</span>
+              <span class="feature-tag">산촌체험</span>
+              <span class="feature-tag">아리랑</span>
+            </div>
+            <div class="travel-stats">
+              <div>
+                <span class="rating">⭐⭐⭐⭐</span>
+                <span class="season-badge">여름·가을</span>
+              </div>
+              <div class="visit-count">방문 156</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-card-header">
+            <div class="travel-number">4</div>
+            <div class="travel-name">부산 태종대</div>
+            <div class="travel-location">📍 부산광역시 영도구</div>
+          </div>
+          <div class="travel-card-body">
+            <div class="travel-description">
+              깎아지른 절벽과 푸른 바다가 만나는 절경. 다누비열차를 타고 둘러보는
+              해안 절경과 등대에서 바라보는 일몰이 장관입니다.
+            </div>
+            <div class="travel-features">
+              <span class="feature-tag">해안절경</span>
+              <span class="feature-tag">등대</span>
+              <span class="feature-tag">일몰</span>
+            </div>
+            <div class="travel-stats">
+              <div>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+                <span class="season-badge">사계절</span>
+              </div>
+              <div class="visit-count">방문 203</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-card-header">
+            <div class="travel-number">5</div>
+            <div class="travel-name">전남 순천만 습지</div>
+            <div class="travel-location">📍 전라남도 순천</div>
+          </div>
+          <div class="travel-card-body">
+            <div class="travel-description">
+              갈대밭이 펼쳐진 천연 습지의 아름다움. 철새들의 서식지이자
+              생태계의 보고로 자연이 주는 감동을 만날 수 있습니다.
+            </div>
+            <div class="travel-features">
+              <span class="feature-tag">생태관광</span>
+              <span class="feature-tag">갈대밭</span>
+              <span class="feature-tag">철새관찰</span>
+            </div>
+            <div class="travel-stats">
+              <div>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+                <span class="season-badge">가을·겨울</span>
+              </div>
+              <div class="visit-count">방문 189</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="travel-card">
+          <div class="travel-card-header">
+            <div class="travel-number">6</div>
+            <div class="travel-name">충북 단양 도담삼봉</div>
+            <div class="travel-location">📍 충청북도 단양</div>
+          </div>
+          <div class="travel-card-body">
+            <div class="travel-description">
+              남한강 위에 우뚝 솟은 세 개의 봉우리. 조선시대부터 사랑받아온
+              절경으로 강과 산이 어우러진 한국적 아름다움의 극치입니다.
+            </div>
+            <div class="travel-features">
+              <span class="feature-tag">강변절경</span>
+              <span class="feature-tag">사진촬영</span>
+              <span class="feature-tag">유람선</span>
+            </div>
+            <div class="travel-stats">
+              <div>
+                <span class="rating">⭐⭐⭐⭐</span>
+                <span class="season-badge">봄·가을</span>
+              </div>
+              <div class="visit-count">방문 174</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pagination">
+        <span>1</span>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 석원님의 정보센터. 모든 권리 보유.</p>
+    </footer>
+  </div>
 </body>
 </html>

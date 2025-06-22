@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -52,41 +51,37 @@
       padding: 20px;
       margin-top: 40px;
     }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>석원님의 정보센터</h1>
-    <p>일정 관리 🍽️ 석원님이 AI 탐방기</p>
-  </header>
-  <nav>
-    <a href="index.html">🏠 메인</a>
-    <a href="notice1.html">📢 공지사항</a>
-    <a href="travel1.html">🌿 힐링여행지</a>
-    <a href="food1.html">🍴 전국맛집</a>
-    <a href="gallery.html">🖼 갤러리</a>
-    <a href="schedule.html">📅 일정관리</a>
-    <a href="resources.html">📂 자료실</a>
-    <a href="about.html">🧑 소개</a>
-    <a href="contact.html">📬 연락처</a>
-    <a href="ideas.html">💡 아이디어 공유</a>
-  </nav>
-  <div class="container">
-    <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>공지사항 게시판</title>
-  <style>
-    body {
-      font-family: '맑은 고딕', sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-    }
     h2 {
       color: #333;
       margin-bottom: 20px;
+    }
+    .recent-posts {
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    .recent-posts h3 {
+      color: #0066aa;
+      margin-top: 0;
+    }
+    .recent-posts ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .recent-posts li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .recent-posts li:last-child {
+      border-bottom: none;
+    }
+    .recent-posts a {
+      color: #0066aa;
+      text-decoration: none;
+    }
+    .recent-posts a:hover {
+      text-decoration: underline;
     }
     table {
       width: 100%;
@@ -109,65 +104,94 @@
     .click-count {
       text-align: center;
     }
+    .pagination {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .pagination span {
+      background-color: #0066aa;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
-  <h2>📢 공지사항 게시판</h2>
-  <div class="recent-posts">
-    <h3>🆕 최근 글</h3>
-    <ul>
-      <li><a href="notice5.html">커피와 기술이 만나는 공간</a></li>
-      <li><a href="notice4.html">강의자료 및 수업 복습 자료 안내</a></li>
-      <li><a href="notice3.html">5060+ 세대를 위한 디지털 길잡이</a></li>
-    </ul>
+  <header>
+    <h1>석원님의 정보센터</h1>
+    <p>일정 관리 🍽️ 석원님이 AI 탐방기</p>
+  </header>
+  <nav>
+    <a href="index.html">🏠 메인</a>
+    <a href="notice1.html">📢 공지사항</a>
+    <a href="travel1.html">🌿 힐링여행지</a>
+    <a href="food1.html">🍴 전국맛집</a>
+    <a href="gallery.html">🖼 갤러리</a>
+    <a href="schedule.html">📅 일정관리</a>
+    <a href="resources.html">📂 자료실</a>
+    <a href="about.html">🧑 소개</a>
+    <a href="contact.html">📬 연락처</a>
+    <a href="ideas.html">💡 아이디어 공유</a>
+  </nav>
+  
+  <div class="container">
+    <h2>🍴 전국맛집 안내</h2>
+    
+    <div class="recent-posts">
+      <h3>🆕 최근 추천 맛집</h3>
+      <ul>
+        <li><a href="#">경상남도 창원 - 할머니손맛 된장찌개집</a></li>
+        <li><a href="#">서울 강남 - 정통 한정식 맛집</a></li>
+        <li><a href="#">부산 해운대 - 신선한 횟집 추천</a></li>
+      </ul>
+    </div>
+    
+    <table>
+      <tr>
+        <th>번호</th>
+        <th>맛집명</th>
+        <th>지역 & 메뉴</th>
+        <th>추천수</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><a href="#">할머니손맛 된장찌개집</a></td>
+        <td>경상남도 창원 - 전통 된장찌개, 보리밥</td>
+        <td class="click-count">89</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><a href="#">바다향 횟집</a></td>
+        <td>부산 해운대 - 자연산 회, 매운탕</td>
+        <td class="click-count">76</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><a href="#">산골 한정식</a></td>
+        <td>서울 강남 - 정통 한정식, 계절요리</td>
+        <td class="click-count">94</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><a href="#">고향냄새 국밥집</a></td>
+        <td>대구 중구 - 돼지국밥, 순대국</td>
+        <td class="click-count">67</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><a href="#">바닷가 조개구이</a></td>
+        <td>인천 월미도 - 조개구이, 해물찜</td>
+        <td class="click-count">82</td>
+      </tr>
+    </table>
+    
+    <div class="pagination">
+      <span>1</span>
+    </div>
   </div>
-  <table>
-    <tr>
-      <th>번호</th>
-      <th>제목</th>
-      <th>내용 요약</th>
-      <th>클릭수</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td><a href="#">블로그 개설 인사</a></td>
-      <td>제2의 인생을 준비하며 배우고 나누는 공간입니다.</td>
-      <td class="click-count">57</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><a href="#">AI·데이터 학습 기록 안내</a></td>
-      <td>ChatGPT, 빅데이터, 코딩 등 학습 내용을 정리합니다.</td>
-      <td class="click-count">68</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><a href="#">5060+ 세대를 위한 디지털 길잡이</a></td>
-      <td>같은 세대와 디지털 기술 배우고 공유하는 방법 안내</td>
-      <td class="click-count">45</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><a href="#">강의자료 및 수업 복습 자료 안내</a></td>
-      <td>수업 내용을 블로그에 업로드 예정입니다.</td>
-      <td class="click-count">39</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td><a href="#">커피와 기술이 만나는 공간</a></td>
-      <td>기술 이야기는 물론 커피 인생 이야기까지 나눔</td>
-      <td class="click-count">51</td>
-    </tr>
-  </table>
-
-  <!-- 페이지네이션 -->
-  <div style="margin-top: 20px; text-align: center;">
-    <span style="background-color: #0066aa; color: white; padding: 6px 12px; border-radius: 4px;">1</span>
-  </div>
+  
+  <footer>
+    <p>&copy; 2024 석원님의 정보센터. 모든 권리 보유.</p>
+  </footer>
 </body>
-</html>
-
-  </div>
-</body>
-
 </html>

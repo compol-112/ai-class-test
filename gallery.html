@@ -1,147 +1,153 @@
-<!-- gallery.html -->
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>🖼 갤러리 - 석원님의 정보센터</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>갤러리 - 석원님의 정보블로그</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f0f0;
+      font-family: "Arial", sans-serif;
+      background-color: #0a3d62;
+      color: #fff;
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
+    header, footer {
+      background-color: #054177;
+      padding: 1rem;
       text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
     nav {
-      background: #0055aa;
-      padding: 10px;
+      background-color: #0055a4;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      padding: 0.5rem;
     }
     nav a {
-      color: white;
+      color: #fff;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
+    main {
+      padding: 2rem;
     }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .gallery-content {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #1e3d59;
+      border-radius: 8px;
+      padding: 2rem;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      color: #feca57;
     }
-    .gallery img {
-      width: 260px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-    .comment-section {
-      margin-top: 40px;
-    }
-    textarea {
+    table {
       width: 100%;
-      height: 100px;
-      margin-bottom: 10px;
+      border-collapse: collapse;
+      background-color: #0f2d46;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #0055aa;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    th, td {
+      border: 1px solid #5c92c6;
+      padding: 10px;
+      text-align: left;
     }
-    .visitor-counter {
-      margin-top: 30px;
-      font-weight: bold;
-      text-align: right;
-      color: #666;
+    th {
+      background-color: #145374;
+      color: #fff;
     }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+    td {
+      color: #dbe6f2;
+    }
+    .emoji {
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>석원님의 정보센터</h1>
-    <p>사진으로 기록하는 추억들</p>
+    <h1>🌿 석원님의 정보갤러리</h1>
+    <p>삶과 디지털 기술이 어우러지는 이야기들</p>
   </header>
+
   <nav>
     <a href="index.html">🏠 메인</a>
-    <a href="notice1.html">📢 공지사항</a>
-    <a href="travel1.html">🌿 힐링여행지</a>
-    <a href="food1.html">🍴 전국맛집</a>
-    <a href="gallery.html">🖼 갤러리</a>
-    <a href="schedule.html">📅 일정관리</a>
-    <a href="resources.html">📂 자료실</a>
+    <a href="notice.html">📢 공지사항</a>
+    <a href="travel.html">🌿 힐링여행지</a>
+    <a href="food.html">🍴 전국맛집</a>
+    <a href="gallery.html">🖼️ 갤러리</a>
+    <a href="schedule.html">🗓️ 일정관리</a>
+    <a href="resources.html">📁 자료실</a>
     <a href="about.html">🧑 소개</a>
-    <a href="contact.html">📬 연락처</a>
-    <a href="ideas.html">💡 아이디어 공유</a>
+    <a href="contact.html">📋 연락처</a>
+    <a href="idea.html">💡 아이디어 공유</a>
   </nav>
 
-  <div class="container">
-    <h2>📷 순찰 현장 스냅</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/260x160?text=오동동+순찰" alt="오동동 순찰">
-      <img src="https://via.placeholder.com/260x160?text=상남초등학교" alt="상남초">
-      <img src="https://via.placeholder.com/260x160?text=노산동+주택가" alt="노산동 순찰">
+  <main>
+    <div class="gallery-content">
+      <h2>📌 블로그 콘텐츠 갤러리</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>아이콘</th>
+            <th>주제</th>
+            <th>내용 예시</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="emoji">🎓</td>
+            <td>디지털 생활기술 팁</td>
+            <td>앱 추천, 사진 편집, 블로그 운영 팁</td>
+            <td>중장년층도 쉽게 활용 가능한 디지털 활용법 공유</td>
+          </tr>
+          <tr>
+            <td class="emoji">☕</td>
+            <td>삶의 쉼표</td>
+            <td>카페 탐방기, 음악 추천, 독서 기록</td>
+            <td>감성 콘텐츠로 방문자에게 공감과 여유 제공</td>
+          </tr>
+          <tr>
+            <td class="emoji">💡</td>
+            <td>생각정리 노트</td>
+            <td>뉴스에 대한 생각, 인생 질문, 일상 메모</td>
+            <td>자아 성찰이나 세대 공감 이야기로 방문자 소통</td>
+          </tr>
+          <tr>
+            <td class="emoji">🧭</td>
+            <td>나의 기록과 도전</td>
+            <td>자격증 도전기, AI 공부일지, 산책 루틴</td>
+            <td>도전하는 삶을 보여주며 독자에게 영감 제공</td>
+          </tr>
+          <tr>
+            <td class="emoji">📷</td>
+            <td>일상 브이로그</td>
+            <td>하루 루틴, 가족 시간, 산책 사진</td>
+            <td>사진과 짧은 글로 편하게 공유</td>
+          </tr>
+          <tr>
+            <td class="emoji">🌱</td>
+            <td>건강한 삶 팁</td>
+            <td>스트레칭, 수면 관리, 건강검진 후기</td>
+            <td>5060세대에게 필요한 자기 관리 정보</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <h2>📌 여행 스냅</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/260x160?text=동피랑" alt="동피랑">
-      <img src="https://via.placeholder.com/260x160?text=지리산" alt="지리산">
-      <img src="https://via.placeholder.com/260x160?text=감포+해변" alt="감포">
-    </div>
-
-    <div class="comment-section">
-      <h3>💬 댓글 남기기</h3>
-      <textarea placeholder="댓글을 입력하세요..."></textarea>
-      <br>
-      <button onclick="alert('댓글이 등록되었습니다 (실제 저장은 작동하지 않음)')">등록</button>
-    </div>
-
-    <div class="visitor-counter">
-      👁️ 방문자 수: <span id="visitor-count">0</span>
-    </div>
-  </div>
+  </main>
 
   <footer>
-    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
+    <p>© 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT</p>
   </footer>
-
-  <script>
-    // 로컬 스토리지를 이용한 임시 방문자 수 증가
-    const countKey = 'visitor_gallery_count';
-    let count = localStorage.getItem(countKey);
-    if (!count) {
-      count = 1;
-    } else {
-      count = parseInt(count) + 1;
-    }
-    localStorage.setItem(countKey, count);
-    document.getElementById('visitor-count').innerText = count;
-  </script>
 </body>
 </html>

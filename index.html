@@ -217,4 +217,28 @@
     &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
   </footer>
 </body>
+  <!-- 방문자 수 우측 하단 표시 -->
+<div style="
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: navy;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+">
+  🔥 오늘의 방문자 수: <span id="visitCount">0</span>
+</div>
+
+<script>
+  // 간단한 방문자 수 증가 (세션 기준: 새로고침시 증가)
+  let visitCount = sessionStorage.getItem("visitCount") || 0;
+  visitCount++;
+  sessionStorage.setItem("visitCount", visitCount);
+  document.getElementById("visitCount").textContent = visitCount;
+</script>
+
 </html>

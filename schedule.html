@@ -1,118 +1,55 @@
-<!-- schedule.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>📅 일정관리 - 석원님의 정보센터</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일정 관리</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
+      font-family: '맑은 고딕', sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #0055aa;
-      padding: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
     .container {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 800px;
+      margin: 40px auto;
       background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
+    h1 {
       text-align: center;
+      color: #2c3e50;
     }
-    th {
-      background-color: #e0e0e0;
+    ul.schedule-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
     }
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+    ul.schedule-list li {
+      background: #ecf0f1;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    ul.schedule-list li strong {
+      color: #2980b9;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>석원님의 정보센터</h1>
-    <p>📅 주요 일정 및 활동계획 관리</p>
-  </header>
-  <nav>
-    <a href="index.html">🏠 메인</a>
-    <a href="notice1.html">📢 공지사항</a>
-    <a href="travel1.html">🌿 힐링여행지</a>
-    <a href="food1.html">🍴 전국맛집</a>
-    <a href="gallery.html">🖼 갤러리</a>
-    <a href="schedule.html">📅 일정관리</a>
-    <a href="resources.html">📂 자료실</a>
-    <a href="about.html">🧑 소개</a>
-    <a href="contact.html">📬 연락처</a>
-    <a href="ideas.html">💡 아이디어 공유</a>
-  </nav>
-
   <div class="container">
-    <h2>📅 2025년 6월 주요 일정</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>날짜</th>
-          <th>일정</th>
-          <th>비고</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>6월 21일(토)</td>
-          <td>오동동 야간 순찰 집중</td>
-          <td>22시~02시</td>
-        </tr>
-        <tr>
-          <td>6월 23일(월)</td>
-          <td>순찰 장비 점검 주간 시작</td>
-          <td>전원 무전기 배터리 확인</td>
-        </tr>
-        <tr>
-          <td>6월 30일(일)</td>
-          <td>6월 활동보고 정리 및 제출</td>
-          <td>PDF 업로드 예정</td>
-        </tr>
-      </tbody>
-    </table>
+    <h1>📅 일정 관리</h1>
+    <ul class="schedule-list">
+      <li><strong>AI 및 코딩 학습 계획</strong><br>ChatGPT, 파이썬, 데이터 분석 등 실습 기반 학습</li>
+      <li><strong>평생교육원 수강 일정</strong><br>창원 시민 대상 교육 참여 및 강의 수강</li>
+      <li><strong>바리스타 모임 및 지역 커뮤니티 활동</strong><br>바리스타 자격 실습 및 동호회 모임</li>
+      <li><strong>건강 · 운동 루틴</strong><br>주간 스트레칭, 걷기, 건강관리 일정 기록</li>
+      <li><strong>블로그 콘텐츠 발행</strong><br>AI 학습기록, 소감문, 프로젝트 결과물 업로드 일정</li>
+    </ul>
   </div>
-
-  <footer>
-    &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
-  </footer>
 </body>
 </html>

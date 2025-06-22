@@ -1,47 +1,77 @@
+
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>공지사항 세보</title>
+  <title>🍴 전국맛집 - 석원님의 정보센터</title>
   <style>
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
       padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0055aa;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .container {
       max-width: 800px;
-      margin: 40px auto;
-      background-color: white;
+      margin: 30px auto;
+      background: white;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 {
-      font-size: 26px;
-      color: #00509E;
+    .card {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
       margin-bottom: 20px;
     }
-    .notice-date {
-      color: #888;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    .notice-content {
-      font-size: 16px;
-      line-height: 1.7;
-    }
-    a {
-      color: #00509E;
-      text-decoration: none;
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <h1>석원님의 정보센터</h1>
+    <p>일정 관리 🍽️ 석원님이 AI 탐방기</p>
+  </header>
+  <nav>
+    <a href="index.html">🏠 메인</a>
+    <a href="notice1.html">📢 공지사항</a>
+    <a href="travel1.html">🌿 힐링여행지</a>
+    <a href="food1.html">🍴 전국맛집</a>
+    <a href="gallery.html">🖼 갤러리</a>
+    <a href="schedule.html">📅 일정관리</a>
+    <a href="resources.html">📂 자료실</a>
+    <a href="about.html">🧑 소개</a>
+    <a href="contact.html">📬 연락처</a>
+    <a href="ideas.html">💡 아이디어 공유</a>
+  </nav>
   <div class="container">
     <h1>📢 2025 년 6월 공지</h1>
     <div class="notice-date">2025.06.25</div>

@@ -119,6 +119,87 @@
 </script>
 
   <body>
+    <!-- 1. 글쓰기 버튼 -->
+<button onclick="toggleWriteForm()" style="
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #004080;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 9999;
+">
+📝 글쓰기
+</button>
+
+<!-- 2. 글쓰기 입력 폼 -->
+<div id="writeForm" style="
+    display: none;
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    z-index: 10000;
+">
+  <h4>새 공지 작성</h4>
+  <input type="text" id="noticeTitle" placeholder="제목" style="width: 100%; margin-bottom: 8px;" /><br>
+  <textarea id="noticeContent" rows="4" placeholder="내용" style="width: 100%;"></textarea><br>
+  <button onclick="saveNotice()" style="
+    margin-top: 10px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  ">저장</button>
+</div>
+
+<!-- 3. 공지사항이 표시될 영역 -->
+<div id="noticeArea" style="margin: 30px 20px;">
+  <!-- 여기에 새 공지사항이 추가됩니다 -->
+</div>
+
+<!-- 4. 스크립트 -->
+<script>
+  function toggleWriteForm() {
+    const form = document.getElementById('writeForm');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function saveNotice() {
+    const title = document.getElementById('noticeTitle').value.trim();
+    const content = document.getElementById('noticeContent').value.trim();
+
+    if (!title || !content) {
+      alert('제목과 내용을 입력해주세요.');
+      return;
+    }
+
+    const newNotice = document.createElement('div');
+    newNotice.style = 'background-color:#f0f0f0; padding: 10px; margin-top: 10px; border-radius: 8px;';
+    newNotice.innerHTML = `<strong>${title}</strong><br><p>${content}</p>`;
+
+    document.getElementById('noticeArea').prepend(newNotice);
+
+    // 폼 초기화
+    document.getElementById('noticeTitle').value = '';
+    document.getElementById('noticeContent').value = '';
+    toggleWriteForm();
+  }
+</script>
+
 <!-- ✅ 오른쪽 정렬된 날짜/시간 영역 -->
 <div id="datetime-display" style="
   text-align: right;

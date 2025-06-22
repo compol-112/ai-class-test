@@ -217,28 +217,31 @@
     &copy; 2025 석원님의 정보센터 | 경남 창원시 마산합포구 | 제작: ChatGPT
   </footer>
 </body>
-  <!-- 방문자 수 우측 하단 표시 -->
+<!-- 방문자 수 우측 하단 표시 (디자인 개선) -->
 <div style="
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background-color: navy;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    background-color: #002f6c; /* 더 밝고 선명한 네이비 */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    border: 1px solid #ffffff44;
 ">
-  🔥 오늘의 방문자 수: <span id="visitCount">0</span>
+  오늘 방문자 수 : <span id="visitCount">0</span>
 </div>
 
 <script>
-  // 간단한 방문자 수 증가 (세션 기준: 새로고침시 증가)
+  // 새로고침 기준 방문자 수 증가 (세션 기준)
   let visitCount = sessionStorage.getItem("visitCount") || 0;
   visitCount++;
   sessionStorage.setItem("visitCount", visitCount);
   document.getElementById("visitCount").textContent = visitCount;
 </script>
+
 
 </html>
